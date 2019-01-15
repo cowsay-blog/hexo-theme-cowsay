@@ -15,7 +15,19 @@
   "author": "MomoCow",
   "license": "MIT",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "commentbox.io": "^2.0.0",
+    "css-loader": "^2.1.0",
+    "disqusjs": "^1.1.0",
+    "hexo-fontmin": "file:../../../packages/hexo-fontmin",
+    "hexo-renderer-nunjucks-extra": "file:../../../packages/hexo-renderer-nunjucks-extra",
+    "hexo-renderer-scss": "^1.2.0",
+    "hexo-renderer-webpack4": "file:../../../packages/hexo-renderer-webpack4",
+    "mime": "^2.4.0",
+    "nprogress": "^0.2.0",
+    "overlayscrollbars": "^1.6.1",
+    "style-loader": "^0.23.1"
+  },
   "devDependencies": {
     "gitmoji-cli": "^1.9.2"
   },
