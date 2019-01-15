@@ -1,0 +1,30 @@
+{
+  "name": "hexo-theme-cowsay",
+  "version": "1.0.0",
+  "description": "A Hexo theme modified from hexo-theme-apollo.",
+  "scripts": {
+    "commit": "gitmoji -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "cowsay",
+    "blog"
+  ],
+  "author": "MomoCow",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gitmoji-cli": "^1.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cowsay-blog/hexo-theme-cowsay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cowsay-blog/hexo-theme-cowsay/issues"
+  },
+  "homepage": "https://github.com/cowsay-blog/hexo-theme-cowsay#readme"
+}

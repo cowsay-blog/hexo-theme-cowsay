@@ -1,0 +1,14 @@
+<div class="post">
+  <article class="post-block">
+    <h1 class="post-title">{{ item.title }}</h1>
+    {% include "partial/post/post-info.njk" %}
+    <div class="post-content">{{ item.content }}</div>
+  </article>
+</div>
+{% if theme.comment.use %}
+  <hr />
+  <div class="comment"> 
+    <h2>{{ __('comment') }}</h2>
+    {% include "partial/plugin/comment/" + theme.comment.use + "/main.njk" %}
+  </div>
+{% endif %}

@@ -1,0 +1,20 @@
+{% set _current_url = url_for(page.path) %}
+<ul class="nav nav-list" data-turbolinks-permanent>
+{% for key, value in theme.menu %}
+  <li class="nav-list-item">
+    {% if value.href %}
+      {% set _this_link = url_for(value.href) %}
+    {% else %}
+      {% set _this_link = url_for(value) %}
+    {% endif %}
+
+    {% set _active_cls = 'active' if _current_url === _this_link else '' %}
+    {{
+      autolink(_this_link, key.toUpperCase(), {
+        class: 'nav-list-link ' + _active_cls,
+        target: value.target
+      })
+    }}
+  </li>
+{% endfor %}
+</ul>

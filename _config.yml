@@ -1,0 +1,60 @@
+# menu: {
+#   [menuItemText: string]: string | LinkDescriptor
+# }
+# interface LinkDescriptor {
+#   target: "_self" | "_blank" | "_parent" | "_top"
+#   href: string
+# }
+menu:
+  Blog: /
+  Archive: /archives/
+  Rss:
+    target: _blank
+    href: /atom.xml
+
+# Max length to excerpt posts
+excerpt: 120
+
+# You can define favicons in the 3 following ways
+# 1. As a string
+#     "/favicon.png"
+# 2. As an array of string (it's recommended to include sizes in the filename)
+#     ["/favicon.png", "/apple-icon-192x192.png"]
+# 3. As an array of icon descriptor object
+#     [{
+#         rel: 'icon shortcut',
+#         type: 'image/ico',
+#         href: '/favicon.ico',
+#         sizes: [ 32, 32 ]
+#     }]
+favicon: /favicon.png
+logo: /logo.png
+
+# Uncomment the following section to enable comment plugins
+# comment:
+  # use: <plugin_name>
+  # disqusjs:
+  #   shortname: ''
+  #   siteName: ''
+  #   admin: ''
+  #   adminLabel: ''
+  #   apikey: ''
+  #   api: 'https://disqus.com/api/'
+  # commentbox:
+  #   project: ''
+  # commento:
+  #   host: ''
+  # wildfire:
+  #   databaseProvider:
+  #   databaseConfig:
+  #     apiKey:
+  #     authDomain:
+  #     databaseURL:
+  #     projectId:
+  #     storageBucket:
+  #     messagingSenderId:
+  #   theme:
+  #   locale:
+
+# Copyright Infomation
+startyear: 2019

@@ -1,0 +1,16 @@
+<div class="archive">
+{% set year = 0 %}
+{% set change = false %}
+{% for item in each_post(page.posts) %}
+  {% set itemYear = date(item.date, 'YYYY') %}
+  {% set change = year !== itemYear %}
+  {% set year = itemYear if change else year %}
+  {% if change %}
+  <h2 class="archive-year">{{ year }}</h2>
+  {% endif %}
+  <div class="post-item">
+    {% include "partial/post/post-info.njk" %}
+    <a class="post-title-link" href="{{ url_for(item.path) }}">{{ item.title }}</a>
+  </div>
+{% endfor %}
+</div>

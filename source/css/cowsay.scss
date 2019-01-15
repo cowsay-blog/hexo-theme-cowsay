@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.water-blue {
+  color: #0e83cd;
+  &:active {
+    color: #0e83cd;
+  }
+}
+
+@import "_partial/normalize";
+@import "_partial/base";
+@import "_partial/header";
+@import "_partial/home-post-list";
+@import "_partial/archive-post-list";
+@import "_partial/post";
+@import "_partial/footer";
+@import "_partial/mq";
+@import "_partial/copyright";
+
+@import "_vendor/OverlayScrollbars.min";
+
+@font-face {
+  font-family: 'sourcesanspro';
+  src: url('../font/sourcesanspro.woff2') format('woff2'),
+    url('../font/sourcesanspro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'seto';
+  src: url('../font/setofont.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family:  'sourcesanspro', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Dengxian', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei';
+}
+  
+html {
+  margin-left: calc((100vw - 100%) / 2);
+}
+
+.turbolinks-progress-bar {
+  visibility: hidden;
+}
+
+.comment {
+  .commento-error-box {
+    color: #ff3333;
+  }
+}
+
+/**
+ * @see https://css-tricks.com/basics-css-blend-modes/
+ */
+.title-opacity {
+  font-family: 'seto', sans-serif;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #4d8584a1;
+}
+
+
+.logo-title {
+  position: relative;
+  * {
+    margin: 0;
+  }
+  .title-opacity {
+    position: absolute;
+    top: -28px;
+    left: 10px;
+  }
+  .subtitle {
+    font-family: seto;
+    text-align: center;
+    opacity: 0.7;
+    position: absolute;
+    width: 120px;
+    top: 0;
+    left: 10px;
+  }
+}

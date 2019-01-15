@@ -1,0 +1,13 @@
+{%- set currentDate = now() -%}
+{%- set thisYear = currentDate.getFullYear() -%}
+<p>©&nbsp;
+  {%- if not theme.startyear or theme.startyear === thisYear -%}
+    {{ thisYear }}
+  {%- else -%}
+    {{ theme.startyear }}&nbsp;-&nbsp;{{ thisYear }}
+  {%- endif %}
+  {{ __('copyright',
+    autolink(theme.aboutme or '', config.author, { class: 'water-blue' }),
+    autolink('https://hexo.io/', 'Hexo', { class: 'water-blue' }),
+    autolink('', 'Hexo Theme Cowsay', { class: 'water-blue' })) }}
+</p>

@@ -1,0 +1,11 @@
+<script src="/js/cowsay.js"></script>
+<script>
+  window.CONFIG = {
+  {% if theme.comment and theme.comment.use %}
+    comment: {
+      use: {{ theme.comment.use|dump }},
+      config: {{ theme.comment[theme.comment.use]|dump }}
+    }
+  {% endif %}
+  };
+</script>

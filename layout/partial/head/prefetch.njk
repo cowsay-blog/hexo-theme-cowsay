@@ -1,0 +1,7 @@
+{% if theme.disqusjs and theme.disqusjs.enable %}
+<link rel="dns-prefetch" href="//{{ theme.disqusjs.shortname }}.disqus.com" />
+<link rel="dns-prefetch" href="//disqus.com" />
+<link rel="dns-prefetch" href="https://c.disquscdn.com" />
+{% endif %}
+<link rel="prefetch" href="{{ url_for(theme.favicon) }}" />
+<link rel="prefetch" href="{{ url_for(theme.logo) }}" />

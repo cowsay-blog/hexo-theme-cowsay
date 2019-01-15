@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="{{ config.language }}">
+  <head>
+    {% block head %}
+      {% include 'partial/head/main.njk' %}
+    {% endblock %}
+  </head>
+  <body>
+    {% include "partial/body/scripts.njk" %}
+    <div class="wrap">
+      <header>
+        {% block header %}
+          <a class="logo-link" href="{{ url_for() }}">
+            <img src="{{ url_for(theme.logo) }}" alt="logo" />
+            <div class="logo-title">
+              <p class="title-opacity">
+                {{ config.title|replace(' ', '') }}
+              </p>
+              <p class="subtitle">{{ config.subtitle }}</p>
+            </div>
+          </a>
+          {% include 'partial/nav.njk' %}
+        {% endblock %}
+      </header>
+      <main class="container">
+        {% block container %}
+        {% endblock %}
+      </main>
+      <footer>
+        {% block footer %}
+          {% block pagination %}{% endblock %}
+          {% block copyright %}
+            {% include 'partial/copyright.njk' %}
+          {% endblock %}
+        {% endblock %}
+      </footer>
+    </div>
+  </body>
+</html>
