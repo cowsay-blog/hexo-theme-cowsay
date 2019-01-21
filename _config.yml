@@ -1,3 +1,9 @@
+plugin:
+  hexo-fontmin: true
+  hexo-renderer-webpack4-extra: true
+  hexo-renderer-nunjucks-extra: true
+  hexo-renderer-scss: true
+
 # menu: {
 #   [menuItemText: string]: string | LinkDescriptor
 # }
@@ -29,6 +35,7 @@ excerpt: 120
 #     }]
 favicon: /favicon.png
 logo: /logo.png
+theme_color: '#fff'
 
 # Uncomment the following section to enable comment plugins
 # comment:
