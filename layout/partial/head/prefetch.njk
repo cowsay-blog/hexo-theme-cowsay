@@ -1,7 +1,9 @@
-{% if theme.disqusjs and theme.disqusjs.enable %}
-<link rel="dns-prefetch" href="//{{ theme.disqusjs.shortname }}.disqus.com" />
+{% if theme.comment.use === 'disqusjs' %}
+<link rel="dns-prefetch" href="//{{ theme.comment.disqusjs.shortname }}.disqus.com" />
 <link rel="dns-prefetch" href="//disqus.com" />
 <link rel="dns-prefetch" href="https://c.disquscdn.com" />
 {% endif %}
-<link rel="prefetch" href="{{ url_for(theme.favicon) }}" />
+{% for icon in favicons() %}
+<link rel="prefetch" href="{{ icon.href }}" />
+{% endfor %}
 <link rel="prefetch" href="{{ url_for(theme.logo) }}" />
