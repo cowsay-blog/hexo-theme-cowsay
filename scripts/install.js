@@ -1,4 +1,4 @@
-const { name } = require('./package.json')
+const { name } = require('../package.json')
 const _pick = require('lodash.pick')
 
 /* init plugins */
