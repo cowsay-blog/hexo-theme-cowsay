@@ -2,7 +2,7 @@
   <article class="post-block">
     <h1 class="post-title">{{ item.title }}</h1>
     {% include "partial/post/post-info.njk" %}
-    <div class="post-content">{{ item.content }}</div>
+    <div class="post-content">{{ item.content|safe }}</div>
   </article>
 </div>
 {% if theme.comment.use %}

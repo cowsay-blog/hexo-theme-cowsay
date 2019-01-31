@@ -1,4 +1,10 @@
 <div class="archive">
+{% if is_category() or is_tag() %}
+  <h2>
+    {% if is_category() %}{{ __('category') }}: {{ page.category }}{% endif %}
+    {% if is_tag() %}{{ __('tag') }}: {{ page.tag }}{% endif %}
+  </h2>
+{% endif %}
 {% set year = 0 %}
 {% set change = false %}
 {% for item in each_post(page.posts) %}

@@ -1,8 +1,12 @@
 <div class="post-info">
   {{ full_date(item.date, 'll') }}
-  {% if item.from and (is_home() or is_post()) %}
-    <a class="post-from" href="{{ item.from }}" target="_blank" title="{{ item.from }}">
-      {{ __('translated') }}
-    </a>
+  {%- if is_home() or is_post() %}
+    {%- if item.categories.length > 0 %} | {{ post_categories(item) }}{% endif %}
+    {%- if item.tags.length > 0 %} {{ post_tags(item) }}{% endif %}
+    {% if item.from %}
+      <a class="post-from" href="{{ item.from }}" target="_blank" title="{{ item.from }}">
+        {{ __('translated') }}
+      </a>
+    {% endif %}
   {% endif %}
 </div>
