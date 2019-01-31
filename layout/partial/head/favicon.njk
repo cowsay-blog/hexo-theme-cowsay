@@ -1,7 +1,7 @@
-{# {% for icon in favicons() %}
-<meta {{ icon|xmlattr }}>
+{% for icon in favicons() %}
+  <{{ icon.tag }} {{ icon.attr|xmlattr }}>
 {% endfor %}
 {% if theme.theme_color %}
 <meta name="msapplication-TileColor" content="{{ theme.theme_color }}">
 <meta name="theme-color" content="{{ theme.theme_color }}">
-{% endif %} #}
+{% endif %}
