@@ -1,14 +1,11 @@
-const { name } = require('../package.json')
+const { name, dependencies } = require('../package.json')
 const _pick = require('lodash.pick')
 
 /* init plugins */
 
-const defaultPluginsConfig = {
-  'hexo-fontmin': true,
-  'hexo-renderer-webpack4-extra': true,
-  'hexo-renderer-nunjucks-extra': true,
-  'hexo-renderer-scss': true
-}
+const defaultPluginsConfig = Object.keys(dependencies)
+  .filter(pluginName => pluginName.startsWith('hexo-'))
+  .reduce((cfg, pluginName) => Object.assign(cfg, { [pluginName]: true }), {})
 
 const pluginList = Object.keys(defaultPluginsConfig)
 
