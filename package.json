@@ -20,7 +20,7 @@
     "css-loader": "^2.1.0",
     "disqusjs": "^1.1.0",
     "hexo-fontmin": "github:cowsay-blog/hexo-fontmin",
-    "hexo-renderer-nunjucks-extra": "github:cowsay-blog/hexo-renderer-nunjucks-extra",
+    "hexo-renderer-njcks": "file:../../../hexo-renderer-njcks",
     "hexo-renderer-scss": "^1.2.0",
     "hexo-webpack": "^0.1.2",
     "image-size": "^0.7.1",

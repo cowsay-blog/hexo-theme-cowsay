@@ -3,11 +3,10 @@ const _pick = require('lodash.pick')
 
 /* init plugins */
 
-const defaultPluginsConfig = Object.keys(dependencies)
+const pluginList = Object.keys(dependencies)
+const defaultPluginsConfig = pluginList
   .filter(pluginName => pluginName.startsWith('hexo-'))
   .reduce((cfg, pluginName) => Object.assign(cfg, { [pluginName]: true }), {})
-
-const pluginList = Object.keys(defaultPluginsConfig)
 
 const pluginsConfig = Object.assign(
   {},
