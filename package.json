@@ -22,7 +22,7 @@
     "hexo-fontmin": "github:cowsay-blog/hexo-fontmin",
     "hexo-renderer-nunjucks-extra": "github:cowsay-blog/hexo-renderer-nunjucks-extra",
     "hexo-renderer-scss": "^1.2.0",
-    "hexo-renderer-webpack4-extra": "github:cowsay-blog/hexo-renderer-webpack4-extra",
+    "hexo-webpack": "^0.1.0",
     "image-size": "^0.7.1",
     "lodash.pick": "^4.4.0",
     "mime": "^2.4.0",
