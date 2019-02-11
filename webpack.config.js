@@ -1,10 +1,14 @@
 module.exports = {
   mode: 'production',
-  entry: [
-    'js/cowsay.js',
-    'js/cowsay-body.js',
-    'js/cowsay-post.js'
-  ],
+  entry: {
+    cowsay: 'js/cowsay.js',
+    'cowsay-body': 'js/cowsay-body.js',
+    'cowsay-post': 'js/cowsay-post.js'
+  },
+  output: {
+    path: '/js/',
+    filename: '[name].js'
+  },
   module: {
     rules: [
       {
