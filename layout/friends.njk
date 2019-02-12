@@ -1,0 +1,21 @@
+{% extends "_layout.njk" %}
+
+{% block container %}
+  <div class="frient-list">
+    {% for friend in listFriends(page.friend_list) %}
+      <a href="{{ friend.href }}" target="_blank" title="{{ friend.description }}">
+        <div class="card">
+          {% if friend.thumbnail %}
+            <div class="card-image">
+              <img src="{{ friend.thumbnail }}" />
+            </div>
+          {% endif %}
+          <div class="site-info">
+            <div class="card-header">{{ friend.site }}</div>
+            <div class="author">{{ friend.name }}</div>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}
