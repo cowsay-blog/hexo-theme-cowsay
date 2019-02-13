@@ -1,21 +1,54 @@
 {% extends "_layout.njk" %}
 
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('/css/spectre-custom.css') }}" />
+  {{ super() }}
+  <style>
+    /* Fix css polution between hexo-theme-cowsay and spectre */
+    main.container {
+      padding-left: inherit;
+      padding-right: inherit;
+      width: inherit;
+    }
+
+    .friend-list > h2 {
+      color: inherit;
+      line-height: 1.6;
+      margin: 0;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+{% endblock %}
+
 {% block container %}
-  <div class="frient-list">
-    {% for friend in listFriends(page.friend_list) %}
-      <a href="{{ friend.href }}" target="_blank" title="{{ friend.description }}">
-        <div class="card">
-          {% if friend.thumbnail %}
-            <div class="card-image">
-              <img src="{{ friend.thumbnail }}" />
+  
+  <div class="friend-list">
+    <h2>小夥伴和他們的窩 🏠</h2>
+    <div class="desc">友站募集中，歡迎下方留言 🤝</div>
+    <div class="container">
+      {% for friend in listFriends(page.friend_list) %}
+        <div class="card friend tooltip tooltip-{{ 'right' if (loop.index % 2) === 1 else 'left' }} rainbow{{ loop.index0 % 8 }}" data-tooltip="{{ friend.description }}">
+          <a href="{{ friend.href }}" target="_blank">
+            <div class="card-body">
+              <div class="rel-wrapper">
+                {% if friend.thumbnail %}
+                  {% include "partial/friends/thumb.njk" %}
+                {% endif %}
+                <div class="info-container">
+                  <div class="card-title h4">{{ friend.site }}</div>
+                  <div class="card-subtitle">{{ friend.name }}</div>
+                </div>
+              </div>
             </div>
-          {% endif %}
-          <div class="site-info">
-            <div class="card-header">{{ friend.site }}</div>
-            <div class="author">{{ friend.name }}</div>
-          </div>
+          </a>
         </div>
-      </a>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
+  {% include "partial/comment.njk" %}
 {% endblock %}

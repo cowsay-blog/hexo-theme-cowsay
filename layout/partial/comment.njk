@@ -1,0 +1,7 @@
+{% if theme.comment.use %}
+  <hr />
+  <div class="comment"> 
+    <h2>{{ __('comment') }}</h2>
+    {% include "partial/plugin/comment/" + theme.comment.use + "/main.njk" %}
+  </div>
+{% endif %}
