@@ -28,11 +28,11 @@
 {% block container %}
   
   <div class="friend-list">
-    <h2>小夥伴和他們的窩 🏠</h2>
-    <div class="desc">友站募集中，歡迎下方留言 🤝</div>
+    <h2>{{ __('friend_list') }}</h2>
+    <div class="desc">{{ page.content|safe }}</div>
     <div class="container">
       {% for friend in listFriends(page.friend_list) %}
-        <div class="card friend tooltip tooltip-{{ 'right' if (loop.index % 2) === 1 else 'left' }} rainbow{{ loop.index0 % 8 }}" data-tooltip="{{ friend.description }}">
+        <div class="card friend tooltip tooltip-{{ 'right' if (loop.index % 2) === 1 else 'left' }} rainbow{{ loop.index0 % 8 }}" data-tooltip="{{ friend.description or friend.href }}">
           <a href="{{ friend.href }}" target="_blank">
             <div class="card-body">
               <div class="rel-wrapper">
